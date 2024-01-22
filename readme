@@ -1,0 +1,6 @@
+### Aspect Oriented Programming
+
+- Use this programming model when you want to inject execution of certain logic before or after a service method is executed.
+- By looking at the service code no developer can understand whether additional logic around execution of service method because no such annotation or markings are used in service class.
+- It is only understood by looking at the expression used with @Before and @After annotations.
+
