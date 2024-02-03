@@ -4,3 +4,12 @@
 - By looking at the service code no developer can understand whether additional logic around execution of service method because no such annotation or markings are used in service class.
 - It is only understood by looking at the expression used with @Before and @After annotations.
 
+Joinpoint
+- Program execution flow. Methods that are called during the flow of execution
+
+Advice
+- the set of instructions that are executed. actual action to be taken either before or after the method execution.
+- This is the actual piece of code that's executed.
+
+PointCut
+- the point in a joinpoint where the advice is executed.

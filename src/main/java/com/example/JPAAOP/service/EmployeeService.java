@@ -3,6 +3,7 @@ package com.example.JPAAOP.service;
 
 
 import com.example.JPAAOP.EmployeeDetailDTO;
+import com.example.JPAAOP.aspect.LogExecutionTime;
 import com.example.JPAAOP.entity.Address;
 import com.example.JPAAOP.entity.Employee;
 import com.example.JPAAOP.exception.CardNotCreatedException;
@@ -47,6 +48,7 @@ public class EmployeeService {
         return emp;
     }
 
+    @LogExecutionTime
     public Employee getEmployees(Long id)
     {
         return employeeRepo.findById(id).orElse(null);

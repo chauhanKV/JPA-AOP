@@ -1,6 +1,8 @@
 package com.example.JPAAOP.aspect;
 
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -27,5 +29,18 @@ public class SimpleAspect {
     public void afterMethod()
     {
         LOGGER.info("Executing afterMethod.");
+    }
+
+    @Around("@annotation(com.example.JPAAOP.aspect.LogExecutionTime)")
+    public Object executionLogTime(ProceedingJoinPoint point) throws Throwable{
+        // before method
+        long start = System.currentTimeMillis();
+        // actual method
+        Object result = point.proceed();
+        // after method
+        long end = System.currentTimeMillis();
+        long totalTimeTaken = end - start;
+        LOGGER.info("Execution time {} ms",totalTimeTaken);
+        return result;
     }
 }
