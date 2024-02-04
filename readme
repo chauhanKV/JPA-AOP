@@ -13,3 +13,7 @@ Advice
 
 PointCut
 - the point in a joinpoint where the advice is executed.
+
+Annotation
+- Is used to mark a method with certain aspect.
+- The logic of annotation is written in aspect and its executed at runtime.
